@@ -1,12 +1,14 @@
+package Main;
 import java.io.*;
 import java.util.*;
 
-public class Main {
+
+public class Lame {
 	int memory[] = new int[1000];
 	int register[] = new int[32];
 	String path;
 
-	public Main(String path) {
+	public Lame(String path) {
 		this.path = path;
 		initializeEmpty(memory);
 		initializeEmpty(register);
@@ -148,7 +150,7 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		Main run = new Main("program.txt");
+		Lame run = new Lame("User directory/Programs/program.txt");
 
 		run.runProgram();
 
