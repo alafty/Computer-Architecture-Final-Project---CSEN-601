@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * The instruction should take 2 parameters of type integer and return the value of their sum
  */
 public class Add implements Executable {
-    private int params; // number of parameters input for the instruction// number of parameters input for the instruction
+    private int params; // number of parameters input for the instruction
     private static boolean singleton = false;
 
     public Add () throws ClassInstantiatedException{

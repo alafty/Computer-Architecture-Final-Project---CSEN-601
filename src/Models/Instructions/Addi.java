@@ -11,7 +11,7 @@ import Constants.Type;
  * The instruction should take 2 parameters of type integer and return the value of their sum
  */
 public class Addi implements Executable {
-    private int params; // number of parameters input for the instruction// number of parameters input for the instruction
+    private int params; // number of parameters input for the instruction
     private static boolean singleton = false;
 
     public Addi () throws ClassInstantiatedException{
