@@ -21,7 +21,7 @@ public class Beq implements Executable {
         singleton = true;
     }
     /**
-     * {@code run} method should take 2 parameters of type integer and return the value of their sum
+     * {@code run} method should take 3 parameters, 2 registers and check for their equality. If they are equal branch to label of the third parameter  
      * 
      * @param args - the parameters of the instruction
      * @param process - the process that is running the instruction
