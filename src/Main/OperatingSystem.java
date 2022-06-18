@@ -11,19 +11,13 @@
 package Main;
 
 
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
-
-import javax.print.DocFlavor.STRING;
 
 import Exceptions.ClassInstantiatedException;
 import Exceptions.InvalidJumpOperation;
@@ -98,21 +92,29 @@ public class OperatingSystem  {
         }
         System.out.println( "Enter Program to run");
         // Scanner sc =  new Scanner(System.in);
-        String command = "program.txt";
+        String command = "beq.txt";
         ArrayList<String> program = FileReader_.readFile("Programs/" + command);
 
         //pipelined fetch decode cycle 
 
-        while (programCounter< program.size()){
+        while (programCounter < program.size() +2 ){
 
-            System.out.println("Fetching Line: " + (programCounter + 1));
-            if(programCounter -1 >= 0) System.out.println("Decoding Line: " + programCounter);
-            if(programCounter -2>=0)System.out.println("Executing Line: " + (programCounter -1));
-            Executer.executeLine();
-            Decoder.decode();
-            Decoder.instructionsQueue.add(program.get(programCounter++));
-            System.out.println("---------------------------------------- \n");
             
+            if(!Executer.instructionQueue.isEmpty())System.out.println("Executing Line: " + Executer.currentLine);
+            Executer.executeLine();
+
+            if(!Decoder.instructionsQueue.isEmpty()) System.out.println("Decoding Line: " + Decoder.currentLine);
+            Decoder.decode();
+
+            if (programCounter < program.size()){
+                System.out.println("Fetching Line: " + (programCounter + 1 ));
+                Decoder.instructionsQueue.add( program.get(programCounter));
+                Decoder.currentLine = programCounter + 1 + "";
+            }
+            programCounter ++;
+
+
+            System.out.println("---------------------------------------- \n");
         }
         System.out.println("Decoding Line: " + programCounter);
         System.out.println("Executing Line: " + (programCounter -1));    
@@ -157,6 +159,7 @@ public class OperatingSystem  {
     public static void initMap() throws ClassInstantiatedException {
         functions.put("ADD", new Add());
         functions.put("ADDI", new Addi());
+        functions.put("BEQ",new Beq());
 
         registers.put("$zero",0);
         registers.put("$at",-100);
