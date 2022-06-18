@@ -1,6 +1,5 @@
 package Models.Instructions;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 import Exceptions.ClassInstantiatedException;
