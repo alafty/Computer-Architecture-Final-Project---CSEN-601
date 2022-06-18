@@ -21,7 +21,7 @@ public class MemoryUtils {
             int offset = Integer.parseInt(rawAddress.split("\\(")[0]);
             String register = rawAddress.split("\\(")[1].split("\\)")[0];
             int registerValue = OperatingSystem.registers.get(register);
-            return offset + registerValue;
+            return (offset/4) + registerValue;
         } catch (Exception e) {
             throw new InvalidSyntaxException("Invalid syntax for the address : " + rawAddress, OperatingSystem.programCounter);
         }
