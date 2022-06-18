@@ -1,0 +1,8 @@
+ADDI $t2,$zero,0
+ADDI $t3,$zero,10
+ADDI $t1,$zero,13
+Loop: ADDI $t1,$t1,10 
+ADDI $t2,$t2,1
+BEQ $t2,$t3,Exit
+BEQ $zero,$zero,Loop
+Exit:

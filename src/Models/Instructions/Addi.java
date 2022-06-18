@@ -5,7 +5,6 @@ import Main.OperatingSystem;
 
 import java.util.ArrayList;
 
-import Constants.Type;
 
 /**
  * The instruction should take 2 parameters of type integer and return the value of their sum

@@ -26,8 +26,9 @@ import Interfaces.*;
 public class Executer {
 
     
-    static ArrayList<Executable> instructionQueue = new ArrayList<Executable>();
-    static ArrayList<ArrayList<String> > paramsQueue= new ArrayList<ArrayList<String>>();
+    public static ArrayList<Executable> instructionQueue = new ArrayList<Executable>();
+    public static ArrayList<ArrayList<String> > paramsQueue= new ArrayList<ArrayList<String>>();
+    public static String currentLine = "0";
 
     /**
      * {@code initMap}
