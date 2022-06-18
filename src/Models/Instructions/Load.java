@@ -5,6 +5,7 @@ import Exceptions.ClassInstantiatedException;
 import Exceptions.InvalidSyntaxException;
 import Interfaces.Executable;
 import Main.OperatingSystem;
+import Utils.MemoryUtils;
 
 public class Load implements Executable{
     
@@ -29,8 +30,9 @@ public class Load implements Executable{
      */
     @Override
     public void run(ArrayList<String> args) throws InvalidSyntaxException{
-      //TODO: make a case for having an offset
-      OperatingSystem.registers.replace(args.get(0), OperatingSystem.Memory[Integer.parseInt(args.get(1))]);
+        int address = MemoryUtils.getAddressFromRawAddress(args.get(1));
+        OperatingSystem.registers.replace(args.get(0), OperatingSystem.Memory[address]);
+        infoUpdate(args.get(0));
     }
 
     public void infoUpdate (String updateRegister){
