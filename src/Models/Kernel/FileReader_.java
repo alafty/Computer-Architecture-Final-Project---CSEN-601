@@ -44,10 +44,12 @@ public class FileReader_ {
         while ((nextLine= reader.readLine())!= null){
             
             String labelSplit [] = nextLine.split(":");
+
             if (nextLine.contains(":")){
                 OperatingSystem.lables.put(labelSplit[0].trim(), i);
                 if(labelSplit.length >1)nextLine = labelSplit[1];
                 else nextLine = "" ; 
+
             }
             if (!nextLine.equals(""))fileString.add(nextLine.trim());
             else i--;
