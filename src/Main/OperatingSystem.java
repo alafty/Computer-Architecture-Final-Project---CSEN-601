@@ -55,7 +55,7 @@ public class OperatingSystem  {
 
     public static HashMap<String, Executable> functions = new HashMap<String, Executable>();
     public static HashMap<String,Integer> registers = new HashMap<String, Integer>();
-    public static HashMap<String,Integer> lables = new HashMap<String,Integer>();
+    public static HashMap<String,Integer> labels = new HashMap<String,Integer>();
     public static int Memory [] = new int[1000];
     public static int programCounter;
     
@@ -190,7 +190,7 @@ public class OperatingSystem  {
         registers.put("$k0",-100);
         registers.put("$k1",-100);
 
-        for (int i = 0; i<1000; i++){
+        for (int i = 0; i < Memory.length ; i++){
             Memory[i] = -100;
         }
 
