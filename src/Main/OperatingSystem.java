@@ -159,6 +159,7 @@ public class OperatingSystem  {
     public static void initMap() throws ClassInstantiatedException {
         functions.put("ADD", new Add());
         functions.put("ADDI", new Addi());
+        functions.put("LW", new Load());
         functions.put("BEQ",new Beq());
 
         registers.put("$zero",0);
