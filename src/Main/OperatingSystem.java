@@ -91,8 +91,8 @@ public class OperatingSystem  {
             System.out.println("Welcome to MakOS");
         }
         System.out.println( "Enter Program to run");
-        // Scanner sc =  new Scanner(System.in);
-        String command = "test.txt";
+        Scanner sc =  new Scanner(System.in);
+        String command = sc.nextLine();
         ArrayList<String> program = FileReader_.readFile("Programs/" + command);
 
         //pipelined fetch decode cycle 
