@@ -6,7 +6,7 @@ import Interfaces.Executable;
 import Main.OperatingSystem;
 import Utils.MemoryUtils;
 
-class Store implements Executable {
+public class Store implements Executable {
     private int params;
     private static boolean singleton = false;
 
@@ -27,7 +27,7 @@ class Store implements Executable {
         if (OperatingSystem.registers.get(register) == null) {
             throw new InvalidSyntaxException("Register " + register + " is not valid", OperatingSystem.programCounter);
         }
-
+        
         int address = MemoryUtils.getAddressFromRawAddress(rawAddress);
         
         OperatingSystem.Memory[address] = OperatingSystem.registers.get(register);

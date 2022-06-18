@@ -1,0 +1,7 @@
+ADDI $t1,$t1,5 
+ADDI $t2,$t2,7 
+ADDI $t3,$t3,2 
+SUB $t4,$t0,$t1
+SUB $t5,$t2,$t3
+SUB $s0,$t4,$t5
+SW $t4,0($t5) 

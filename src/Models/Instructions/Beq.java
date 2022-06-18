@@ -30,7 +30,7 @@ public class Beq implements Executable {
     public void run(ArrayList<String> args) throws InvalidSyntaxException{
       if(OperatingSystem.registers.get(args.get(0)) == OperatingSystem.registers.get(args.get(1))){
           
-            OperatingSystem.programCounter = OperatingSystem.lables.get(args.get(2));
+            OperatingSystem.programCounter = OperatingSystem.labels.get(args.get(2));
 
           Decoder.instructionsQueue.clear();
           Executer.instructionQueue.clear();

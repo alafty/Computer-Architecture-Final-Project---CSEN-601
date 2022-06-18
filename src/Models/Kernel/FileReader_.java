@@ -46,7 +46,7 @@ public class FileReader_ {
             String labelSplit [] = nextLine.split(":");
 
             if (nextLine.contains(":")){
-                OperatingSystem.lables.put(labelSplit[0].trim(), i);
+                OperatingSystem.labels.put(labelSplit[0].trim(), i);
                 if(labelSplit.length >1)nextLine = labelSplit[1];
                 else nextLine = "" ; 
 

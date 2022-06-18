@@ -92,7 +92,7 @@ public class OperatingSystem  {
         }
         System.out.println( "Enter Program to run");
         // Scanner sc =  new Scanner(System.in);
-        String command = "beq.txt";
+        String command = "test.txt";
         ArrayList<String> program = FileReader_.readFile("Programs/" + command);
 
         //pipelined fetch decode cycle 
@@ -149,7 +149,7 @@ public class OperatingSystem  {
         boolean noChange = true;
         for (int i = 0;i<memory.length;i++){
             if (memory[i]!= -100){
-                System.out.println("Index: " + memory[i]);
+                System.out.println("Index: "+ i + " = " + memory[i]);
                 noChange = false;
             }
         }
@@ -161,6 +161,9 @@ public class OperatingSystem  {
         functions.put("ADDI", new Addi());
         functions.put("LW", new Load());
         functions.put("BEQ",new Beq());
+        functions.put("SUB",new Sub());
+        functions.put("SW",new Store());
+
 
         registers.put("$zero",0);
         registers.put("$at",-100);

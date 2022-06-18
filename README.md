@@ -16,4 +16,4 @@ Amr Fawzy
 
 Disclaimer : This repository is not going to be publicly available until the project is submitted. The Project is shared for educational purposes only and we are not responsible for any misuse of the Project.
 
-## Folder Structure
+## How to Run 
